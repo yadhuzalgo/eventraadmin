@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1004712424270",
+    "project_id": "eventra-77057",
+    "storage_bucket": "eventra-77057.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004712424270:android:4024755eb35994bf1ee41f",
+        "android_client_info": {
+          "package_name": "com.example.projectflutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTn-88S4oTMz1eKxdQlBD_not4KATTb6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004712424270:android:5b7b8de17a6cd71f1ee41f",
+        "android_client_info": {
+          "package_name": "com.example.projectflutteradmin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTn-88S4oTMz1eKxdQlBD_not4KATTb6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
