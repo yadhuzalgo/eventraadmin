@@ -53,60 +53,60 @@ class _EvdState extends State<Evd> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar:  AppBar(
-      automaticallyImplyLeading: false,
-      elevation: 0,
-      centerTitle: true,
-      toolbarHeight: 80,
-      backgroundColor: Colors.transparent,
-      flexibleSpace: ClipRRect(
-        borderRadius:  BorderRadius.vertical(
-          bottom: Radius.circular(28),
-        ),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color(0xFF0F2027),
-                  Color(0xFF2C5364),
-                  Color(0xFF203A43),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius:  BorderRadius.vertical(
-                bottom: Radius.circular(28),
-              ),
-              border: Border(
-                bottom: BorderSide(
-                  color: Colors.cyanAccent.withOpacity(0.3),
-                  width: 1.5,
+        automaticallyImplyLeading: false,
+        elevation: 0,
+        centerTitle: true,
+        toolbarHeight: 80,
+        backgroundColor: Colors.transparent,
+        flexibleSpace: ClipRRect(
+          borderRadius:  BorderRadius.vertical(
+            bottom: Radius.circular(28),
+          ),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Color(0xFF0F2027),
+                    Color(0xFF2C5364),
+                    Color(0xFF203A43),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius:  BorderRadius.vertical(
+                  bottom: Radius.circular(28),
+                ),
+                border: Border(
+                  bottom: BorderSide(
+                    color: Colors.cyanAccent.withOpacity(0.3),
+                    width: 1.5,
+                  ),
                 ),
               ),
             ),
           ),
         ),
-      ),
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-           SizedBox(width: 10),
-          Text(
-            "Booking Details",
-            style: GoogleFonts.orbitron( // Futuristic font
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.white,
-              letterSpacing: 2.0,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(width: 10),
+            Text(
+              "Booking Details",
+              style: GoogleFonts.orbitron( // Futuristic font
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
+                letterSpacing: 2.0,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
 
 
-    body: StreamBuilder<QuerySnapshot>(
+      body: StreamBuilder<QuerySnapshot>(
         stream:
         bookingsCollection.orderBy('timestamp', descending: true).snapshots(),
         builder: (context, snapshot) {
@@ -159,7 +159,7 @@ class _EvdState extends State<Evd> {
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                             SizedBox(height: 4),
+                            SizedBox(height: 4),
                             Text("Stage: ${data['stage'] ?? '-'}",
                                 style: GoogleFonts.poppins()),
                             Text("Price: ₹${data['price'] ?? '-'}",
@@ -169,10 +169,10 @@ class _EvdState extends State<Evd> {
                                 "Date: ${DateFormat('dd MMM yyyy').format(parsedDate)}",
                                 style: GoogleFonts.poppins(),
                               ),
-                             SizedBox(height: 6),
+                            SizedBox(height: 6),
                             Row(
                               children: [
-                                 Text("Status: ",
+                                Text("Status: ",
                                     style: TextStyle(fontWeight: FontWeight.w500)),
                                 statusChip(data['status'] ?? 'Pending'),
                               ],
@@ -180,7 +180,7 @@ class _EvdState extends State<Evd> {
                           ],
                         ),
                       ),
-                       SizedBox(height: 12),
+                      SizedBox(height: 12),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
@@ -197,7 +197,7 @@ class _EvdState extends State<Evd> {
                             onPressed: () =>
                                 updateStatus(booking.id, 'Approved'),
                           ),
-                           SizedBox(width: 10),
+                          SizedBox(width: 10),
                           ElevatedButton.icon(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.redAccent,
